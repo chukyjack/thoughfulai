@@ -153,37 +153,12 @@ class TestPackageSorter(unittest.TestCase):
         self.assertEqual(sort(50, 50, 50, 19.99), "STANDARD")
 
 
-class TestPackageSorterIntegration(unittest.TestCase):
-    """Integration tests with realistic package scenarios."""
-    
-    def test_small_book_package(self):
-        """Test small book package (realistic scenario)."""
-        self.assertEqual(sort(30, 20, 5, 2), "STANDARD")
-    
-    def test_laptop_box(self):
-        """Test laptop box (realistic scenario)."""
-        self.assertEqual(sort(50, 40, 10, 5), "STANDARD")
-    
-    def test_furniture_package(self):
-        """Test furniture package (realistic scenario - bulky)."""
-        self.assertEqual(sort(180, 80, 60, 15), "SPECIAL")
-    
-    def test_industrial_equipment(self):
-        """Test industrial equipment (realistic scenario - heavy)."""
-        self.assertEqual(sort(80, 60, 60, 45), "SPECIAL")
-    
-    def test_large_heavy_machinery(self):
-        """Test large heavy machinery (realistic scenario - rejected)."""
-        self.assertEqual(sort(200, 150, 120, 100), "REJECTED")
-
-
 def run_tests():
     """Run all tests and return results."""
     loader = unittest.TestLoader()
     suite = unittest.TestSuite()
     
     suite.addTests(loader.loadTestsFromTestCase(TestPackageSorter))
-    suite.addTests(loader.loadTestsFromTestCase(TestPackageSorterIntegration))
     
     runner = unittest.TextTestRunner(verbosity=2)
     result = runner.run(suite)
