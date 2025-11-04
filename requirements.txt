@@ -1,0 +1,15 @@
+# Python Package Sorter - Requirements
+# 
+# This project uses only Python standard library.
+# No external dependencies are required for core functionality.
+#
+# Python version: 3.6+
+
+# Optional: For enhanced testing output
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+
+# Note: The project runs with unittest (Python standard library)
+# Install optional packages only if you prefer pytest:
+# pip install -r requirements.txt
+
