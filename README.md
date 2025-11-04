@@ -29,7 +29,7 @@ Packages need to be sorted according to these rules:
 
 1. Clone this repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/chukyjack/thoughfulai.git
 cd thoughfulai
 ```
 
@@ -39,7 +39,6 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. No external dependencies required - uses Python standard library only!
 
 ## Usage
 
@@ -107,49 +106,6 @@ The test suite includes:
 
 **Total: 40+ test cases**
 
-## Examples
-
-### Classification Examples
-
-| Width | Height | Length | Mass | Volume | Classification | Reason |
-|-------|--------|--------|------|--------|----------------|--------|
-| 50 | 50 | 50 | 10 | 125,000 | STANDARD | Not bulky, not heavy |
-| 150 | 50 | 50 | 10 | 375,000 | SPECIAL | Bulky (dimension ≥ 150) |
-| 100 | 100 | 100 | 10 | 1,000,000 | SPECIAL | Bulky (volume ≥ 1M) |
-| 50 | 50 | 50 | 20 | 125,000 | SPECIAL | Heavy (mass ≥ 20) |
-| 150 | 50 | 50 | 20 | 375,000 | REJECTED | Both bulky and heavy |
-| 100 | 100 | 100 | 25 | 1,000,000 | REJECTED | Both bulky and heavy |
-
-### Code Examples
-
-```python
-from package_sorter import sort
-
-# Small parcel
-print(sort(30, 20, 10, 5))  # Output: STANDARD
-
-# Long package (one dimension at threshold)
-print(sort(150, 40, 30, 15))  # Output: SPECIAL
-
-# High-volume package
-print(sort(100, 100, 100, 15))  # Output: SPECIAL
-
-# Heavy but compact package
-print(sort(40, 40, 40, 25))  # Output: SPECIAL
-
-# Large and heavy package
-print(sort(200, 100, 80, 50))  # Output: REJECTED
-```
-
-## Code Quality Features
-
-- ✨ **Clean, readable code** with comprehensive documentation
-- 📝 **Type hints** in docstrings for clarity
-- 🛡️ **Input validation** with meaningful error messages
-- 🧪 **Extensive test coverage** (40+ test cases)
-- 📊 **Edge case handling** (zero values, boundaries, decimals)
-- 🎯 **Single Responsibility Principle** - one function, one purpose
-- ⚡ **No external dependencies** - uses only Python standard library
 
 ## Project Structure
 
@@ -162,23 +118,9 @@ thoughfulai/
 └── requirements.txt            # Python dependencies (none required)
 ```
 
-## Algorithm Explanation
-
-1. **Input Validation**: Ensures all parameters are numeric and non-negative
-2. **Volume Calculation**: Computes volume = width × height × length
-3. **Bulky Check**: Tests if volume ≥ 1,000,000 OR any dimension ≥ 150
-4. **Heavy Check**: Tests if mass ≥ 20
-5. **Classification Logic**:
-   - If bulky AND heavy → REJECTED
-   - If bulky OR heavy → SPECIAL
-   - Otherwise → STANDARD
-
-Time Complexity: O(1) - constant time operation
-Space Complexity: O(1) - constant space usage
-
 ## Author
 
-Created for Thoughtful AI Technical Challenge
+Created by Chuka for Thoughtful AI Technical Challenge
 
 ## License
 

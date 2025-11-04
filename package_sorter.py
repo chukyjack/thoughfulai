@@ -1,19 +1,3 @@
-"""
-Package Sorter for Thoughtful AI Robotic Automation Factory
-
-This module provides functionality to sort packages based on their dimensions
-and mass into appropriate stacks for automated handling.
-
-Public API:
-    sort(width, height, length, mass) -> str
-
-Private helpers:
-    _validate_and_convert_inputs() - Input validation and type conversion
-    _is_bulky() - Check if package is bulky
-    _is_heavy() - Check if package is heavy
-"""
-
-
 def _validate_and_convert_inputs(width, height, length, mass):
     """
     Validate and convert package parameters to floats.
@@ -49,8 +33,6 @@ def _validate_and_convert_inputs(width, height, length, mass):
 
 def _is_bulky(width, height, length):
     """
-    Determine if a package is bulky.
-    
     A package is bulky if:
     - Volume >= 1,000,000 cm³, OR
     - Any dimension >= 150 cm
@@ -69,8 +51,6 @@ def _is_bulky(width, height, length):
 
 def _is_heavy(mass):
     """
-    Determine if a package is heavy.
-    
     A package is heavy if mass >= 20 kg.
     
     Args:
